@@ -2,10 +2,9 @@ class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
         top = -1
-        start = ['(', '[', '{']
         dc = { '(' : ')', '[': ']', '{' : '}'}
         for brac in s:
-            if brac in start:
+            if brac in dc:
                 top += 1
                 stack.append(brac)
             else:
