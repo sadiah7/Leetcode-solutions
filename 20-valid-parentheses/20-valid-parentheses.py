@@ -1,7 +1,5 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        if len(s) % 2 != 0:
-            return False
         stack = []
         top = -1
         start = ['(', '[', '{']
@@ -11,7 +9,7 @@ class Solution:
                 top += 1
                 stack.append(brac)
             else:
-                if top == -1:
+                if top == -1: #if the first character is closing bracket
                     return False
                 if dc[stack[top]] != brac:
                     return False
