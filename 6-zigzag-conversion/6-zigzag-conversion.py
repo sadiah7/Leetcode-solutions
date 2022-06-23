@@ -1,6 +1,6 @@
 class Solution:
     def convert(self, s: str, numRows: int) -> str:
-        if numRows==1:
+        if numRows==1 or numRows > len(s):
             return s
         ls = []
         x = numRows
@@ -20,7 +20,7 @@ class Solution:
                     down = 1
                     up = 0
                     x = numRows-1
-        # print(ls)
+
         x = numRows
         op = ""
         for i in range(numRows):
